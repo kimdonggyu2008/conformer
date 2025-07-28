@@ -1,0 +1,26 @@
+device: cuda
+gpu_id: 1
+
+checkpoint: ./checkpoints_small_batch8_epoch30/checkpoint_13.pt
+
+data:
+  testing_file: ./LibriSpeech/manifest_bpe/tokenized_bpe_test_merged.tsv
+  sampling_rate: 16000
+  hop_length: 160
+  files_sep: "\t"                               # TSV 구분자
+  csv_file_keys: 
+    path: path
+    duration: duration
+    text: text
+    input_ids: input_ids
+
+tokenizer:
+  pretrained_name_or_path: facebook/wav2vec2-base-960h
+  vocab_path: ./tokenizer/vocab.txt
+
+inference:
+  batch_size: 1
+  output_dir: ./inference_results
+  save_csv: true
+  phoneme_lang: en-us                           # 한국어는 "ko"
+
