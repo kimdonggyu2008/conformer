@@ -1,6 +1,12 @@
 # conformer
 
 
+## Other Implementations
+- https://github.com/sooftware/conformer
+- https://github.com/msalhab96/Conformer
+
+
+
 
   # Referances
   ```
